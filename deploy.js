@@ -6,7 +6,10 @@ require("dotenv").config()
 async function main() {
     // First, compile this!
     // And make sure to have your ganache network up!
-    let provider = new ethers.providers.JsonRpcProvider(process.env.RPC_URL)
+    // let provider = new ethers.providers.JsonRpcProvider(process.env.RPC_URL, 4)
+
+    let provider = new ethers.providers.InfuraProvider('rinkeby', process.env.RPC_URL)
+
     let wallet = new ethers.Wallet(process.env.PRIVATE_KEY, provider)
     // const encryptedJson = fs.readFileSync("./.encryptedKey.json", "utf8");
     // let wallet = new ethers.Wallet.fromEncryptedJsonSync(
